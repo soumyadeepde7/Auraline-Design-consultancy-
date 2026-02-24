@@ -1,0 +1,500 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Black', sans-serif; /* Bold look */
+}
+
+body {
+    overflow: hidden;
+    background: #000;
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: brightness(0.6);
+}
+
+/* Nav Bar with Opposite Corners */
+.glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(160, 160, 160, 0.7); /* Grayish transparent */
+    margin: 30px auto;
+    width: 94%;
+    padding: 10px 60px;
+    height: 110px;
+    /* Opposite Corners Logic */
+    border-radius: 80px 0px 80px 0px; 
+    backdrop-filter: blur(10px);
+}
+
+/* Logo Styling */
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.brand-name {
+    font-size: 3.8rem;
+    color: #0029ff; /* Specific Blue */
+    font-weight: 900;
+    line-height: 0.8;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    letter-spacing: -2px;
+}
+
+.brand-sub {
+    font-size: 1.8rem;
+    color: #000;
+    font-weight: bold;
+    align-self: flex-end; /* Right aligned under Auraline */
+    margin-right: 5px;
+}
+
+/* Menu Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li { margin: 0 20px; }
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 900;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Contact Button */
+.contact-btn {
+    background: #052424 !important;
+    color: #1fe0ba !important; /* Cyan text */
+    padding: 12px 30px !important;
+    border-radius: 40px !important;
+}
+
+/* Hero Text Styling */
+.hero-content {
+    margin-top: 50px;
+    padding-left: 80px;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    color: white;
+    letter-spacing: -1px;
+}
+
+.space-highlight {
+    background: rgba(100, 100, 100, 0.5); /* Like Image gray background */
+    display: inline-block;
+    padding: 10px 40px;
+    border-radius: 50px;
+    margin: 10px 0;
+}
+
+.blue-text {
+    font-size: 4.5rem;
+    color: #0029ff;
+}
+
+.hero-content p {
+    color: white;
+    font-size: 1.5rem;
+    width: 500px;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+}
+/* Navigation Bar */
+.glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(160, 160, 160, 0.7); /* Like Image gray-transparent color */
+    backdrop-filter: blur(10px);
+    margin: 20px auto;
+    width: 95%;
+    padding: 0 50px;
+    height: 100px;
+    /* Opposite Corners Logic */
+    border-radius: 80px 0px 80px 0px; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Logo Area: Exact Color & Shadow */
+.logo-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 3.2rem;
+    color: #0029ff; /* Bright Blue */
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -2px;
+    /* Text Shadow effect from image */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.brand-sub {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    align-self: flex-end;
+    margin-top: 5px;
+}
+
+/* Navigation Links & Hover Effect */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #000;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Link Hover Animation (Underline Effect) */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f6f6f7;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* Contact Button: Exact Background & Glow Effect */
+.contact-btn {
+    text-decoration: none;
+    background: #052424; /* Dark Teal background */
+    color: #1fe0ba !important; /* Cyan text */
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.contact-btn:hover {
+    background: #0a3a3a;
+    /* Neon Glow effect */
+    box-shadow: 0 0 15px rgba(31, 224, 186, 0.5);
+    transform: translateY(-2px);
+    color: #fff !important;
+}
+/* Navigation Links Styling */
+.nav-links a {
+    text-decoration: none;
+    color: #000; /* Default color black [cite: 5] */
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* Hover Effect: Only these links will be white with the mouse button */
+.nav-links a:not(.contact-btn):hover {
+    color: #ffffff !important; /* Text white ho jayega */
+}
+
+/* Contact Us Button: Its color will not change */
+.contact-btn {
+    background-color: #052424 !important; /* Dark teal background */
+    color: #1fe0ba !important; /* Cyan text color */
+    padding: 12px 25px !important;
+    border-radius: 50px !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    /* There is no hover color change effect. */
+}
+/* Font and Base Styling */
+.main-text {
+    padding-left: 10%;
+    margin-top: 80px;
+}
+
+/* "Elevate Your" Styling */
+.elevate-text {
+    font-family: 'Arial Black', Gadget, sans-serif; /* Bold and clean font */
+    font-size: 5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+}
+
+/* "Space." Wrapper (The Gray Capsule) */
+.space-wrapper {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent gray circle */
+    display: inline-block;
+    padding: 5px 45px;
+    border-radius: 100px; /* Perfect oval shape */
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px);
+}
+
+/* "Space." Blue Text */
+.space-text {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 4.5rem;
+    color: #0029ff; /* Bright blue color from image */
+    /* Dark shadow as seen in image */
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3); 
+    display: inline-block;
+}
+
+/* Description Text */
+.sub-text {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #ffffff;
+    max-width: 550px;
+    line-height: 1.4;
+}
+
+/* Navigation Links Hover: Only these turn white */
+.nav-links a:not(.contact-btn):hover {
+    color: #ffffff !important;
+    transition: 0.3s;
+}
+
+/* Contact Button remains static (No white on hover) */
+.contact-btn {
+    background-color: #052424 !important;
+    color: #1fe0ba !important;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* Apply In CSS */
+.elevate-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+.space-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #0029ff; /* Blue color  */
+    letter-spacing: -2px;
+}
+/* Main Layout: To arrange text and images side-by-side */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 5%;
+    margin-top: 50px;
+}
+
+/* Image Grid Styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+    width: 50%; /* Right side area */
+}
+
+/* Individual Image Box */
+.img-box {
+    overflow: hidden;
+    border-radius: 30px; 
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Different sizes for Grid effect (Optional) */
+.item1 { height: 350px; border-radius: 80px 30px 30px 30px; } /* Top left extra round */
+.item2 { height: 250px; margin-top: 50px; }
+.item3 { height: 300px; margin-top: -80px; }
+.item4 { height: 320px; border-radius: 30px 30px 80px 30px; } /* Bottom right extra round */
+
+/* Image Hover Animation */
+.img-box:hover {
+    transform: scale(1.03) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+/* Container to split Left and Right */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 8%;
+    gap: 40px;
+}
+
+/* Left side (Text) half screen */
+.hero-left {
+    flex: 1;
+}
+
+/* Right side (Images) half screen */
+.hero-right {
+    flex: 1.2;
+}
+
+/* Image Grid Styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.img-box {
+    overflow: hidden;
+    border-radius: 30px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* staggered look heights */
+.item1 { height: 350px; border-radius: 80px 30px 30px 30px; } 
+.item2 { height: 250px; margin-top: 50px; }
+.item3 { height: 280px; margin-top: -60px; }
+.item4 { height: 320px; border-radius: 30px 30px 80px 30px; }
+
+/* Hover animation */
+.img-box:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+/* Container to handle side-by-side layout */
+.hero-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 8%;
+    gap: 20px;
+}
+
+.hero-left { flex: 1; }
+.hero-right { flex: 1.2; }
+
+/* Photo Grid logic */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.img-box {
+    border-radius: 30px; 
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 1.Remove overflow hidden from the body so it can scroll if needed. */
+body {
+    overflow-y: auto; /* Auto instead of Hidden */
+    background: #000;
+    min-height: 100vh;
+}
+
+/* 2. Make the hero section responsive */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    min-height: 80vh; /* The screen will adjust according to the height. */
+    flex-wrap: wrap; /* Photos will shrink on smaller screens. */
+}
+
+/* 3. Adjust the text size slightly to make sure it takes up space. */
+.elevate-text {
+    font-size: clamp(3rem, 8vw, 5rem); /* It can be scaled up or down depending on the screen size. */
+    line-height: 1.1;
+}
+
+.space-text {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+/* 4. Fixed the photo grid so images don't go off the screen */
+.hero-right {
+    flex: 1;
+    max-width: 550px; /* Set aLimit */
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.img-box {
+    width: 100%;
+    height: auto; /* Keep the height auto so that the aspect ratio is not distorted */
+    max-height: 300px; /* To limit extra-large photos */
+    border-radius: 20px;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image will not be cut, will fit in the box */
+}
+
+/* 5. Reduce the staggered effect to fit the screen */
+.item1 { height: 280px; }
+.item2 { height: 220px; margin-top: 30px; }
+.item3 { height: 240px; margin-top: -40px; }
+.item4 { height: 260px; }
