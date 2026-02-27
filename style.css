@@ -22,11 +22,11 @@ body {
 
 /* Nav Bar with Opposite Corners */
 .glass-nav {
-    position: fixed; /* constant nav bar in 1 place */
-    top: 0;         /* top of screen */
-    left: 50%;      /* come to center */
+    position: fixed; /* Isse nav bar ek jagah ruk jayega */
+    top: 0;         /* Screen ke sabse upar */
+    left: 50%;      /* Center mein laane ke liye */
     transform: translateX(-50%); /* Perfect centering logic */
-    z-index: 1000;  /* Content send back */
+    z-index: 1000;  /* Taaki baaki content iske peeche se jaye */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -712,4 +712,406 @@ body {
         text-align: center;
     }
 }
+.logo-area {
+    display: flex;
+    flex-direction: row; /* Logo aur text ko ek line mein laane ke liye */
+    align-items: center;
+    gap: 15px; /* Logo aur text ke beech ka gap */
+}
 
+.nav-logo {
+    height: 60px;    /* Logo ki height aap apne hisaab se badal sakte hain */
+    width: auto;     /* Aspect ratio sahi rakhne ke liye */
+    display: block;
+}
+
+/* Agar aap chahte hain ki branding (Auraline Design) upar-niche rahe 
+   lekin logo unke left mein rahe, toh ye use karein: */
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+/* Logo aur Text ko ek line mein rakhne ke liye */
+.logo-area {
+    display: flex;
+    align-items: center; /* Logo aur text ko vertically center karega */
+    gap: 12px;           /* Logo aur text ke beech ka gap */
+}
+
+/* Logo ka size */
+.nav-logo {
+    height: 70px;       /* Aap isse chota-bada kar sakte hain */
+    width: auto;
+}
+
+/* Text ko upar-neeche karne ki logic */
+.brand-text-wrapper {
+    display: flex;
+    flex-direction: column; /* Isse Design hamesha Auraline ke neeche rahega */
+    justify-content: center;
+    line-height: 1.1;       /* Dono words ke beech ka gap kam karne ke liye */
+}
+
+.brand-name {
+    font-size: 64px;
+    font-weight: bold;
+    color: #0044ff;         /* Blue color jaisa aapki image mein hai */
+    text-transform: none;
+}
+
+.brand-sub {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;         /* Black color 'Design' ke liye */
+    padding-left: 2px;      /* Halka sa right shift perfect alignment ke liye */
+}
+/* --- About Us Section Styling --- */
+.about-us-section {
+    background-color: #1a1a1a; /* Dark background color of the main page */
+    padding: 100px 0; /* Vertical spacing */
+    font-family: Arial, sans-serif; /* Standard font */
+    color: white; /* Default text color */
+}
+
+/* Container ko screen ke left se flush karne ke liye */
+.container {
+    max-width: 100%; /* Width poori kar di */
+    margin: 0;       /* Auto margin hataya taaki left-align ho jaye */
+    padding: 0;      /* Left side ka padding hataya */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ye sabse zaroori hai: Left se start karne ke liye */
+}
+
+/* White Label Styling */
+.about-label {
+    background-color: white;
+    padding: 30px 60px; /* Thoda padding badha diya taaki look achi aaye */
+    
+    /* Left side touch rahe, isliye border-radius left ka 0 kiya */
+    border-top-left-radius: 0px; 
+    border-bottom-left-radius: 0px;
+    
+    /* Right side rounded rahega */
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px; /* Text box aur label ke beech gap */
+}
+
+.about-label h2 {
+    color: #0044ff;
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/* Right Side: Dark Text Box */
+.about-text-box {
+    background-color: #2c2c2e; /* Slightly lighter dark color for the box */
+    padding: 40px;
+    border-radius: 40px; /* Fully rounded corners for the box */
+    max-width: 1000px; /* Restricting width to match image */
+}
+
+.about-text-box p {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Good spacing for readability */
+    color: #cccccc; /* Off-white color for description text */
+    margin: 0;
+    font-weight: 300; /* Lighter font weight */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack label and box vertically */
+        text-align: center;
+    }
+    
+    .about-label {
+        border-radius: 40px; /* Full rounding for mobile */
+        margin-bottom: 30px; /* Spacing below label */
+        padding: 20px 40px;
+    }
+    
+    .about-label h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-text-box {
+        padding: 30px;
+    }
+}
+
+.blue-text {
+    color: #0044ff; /* Yeh wahi bright blue color hai jo aapki images mein dikh raha hai */
+font-size: 50px;
+}
+
+/* Gaps hatane ke liye reset */
+* { box-sizing: border-box; }
+/* Resetting everything to remove gaps */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #1a1a1a; font-family: sans-serif; }
+
+.services-wrapper { width: 100%; overflow-x: hidden; }
+
+/* Full-width Header Box */
+.header-box {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 60px 5%;
+    border-left: 10px solid #007bff;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+/* --- Root Colors --- */
+:root {
+    --bg-dark: #2a2a2a; /* Main page background (cite: image_3) */
+    --text-orange: #f47d21; /* Title color (cite: image_3) */
+    --text-white: #000000; /* General text color (cite: image_3) */
+    --text-gray-light: hsl(0, 0%, 69%); /* Service description text color (cite: image_3) */
+    --primary-blue: #007bff; /* Header "SERVICES" title color (cite: image_1) */
+    --bg-card-dark: #202020; /* Service card background (cite: image_3) */
+    --bullet-color: #007bff; /* Point bullet color (cite: image_3) */
+}
+
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/* --- Main Container --- */
+.services-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- 1. Main Header Styling (cite: image_1, image_3) --- */
+.services-main-header {
+    background-color: var(--bg-dark); /* Page background (cite: image_3) */
+    padding: 60px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header-content-box {
+    background-color: #f5f5f5; /* Light box background (cite: image_1, image_3) */
+    color: #333; /* Dark text for light box (cite: image_1, image_3) */
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px; /* Curved corners (cite: image_1, image_3) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    color: var(--primary-blue); /* Title in blue (cite: image_1, image_3) */
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    flex: 0 0 auto;
+    padding: 40px;
+    margin-right: 20px;
+}
+
+.header-description {
+    font-size: 0.95rem;
+    color: #555555;
+    padding: 40px;
+    border-left: 2px solid #ddd; /* Separator line between title and text (cite: image_3) */
+}
+
+/* --- 2. Services Grid Styling (cite: image_3) --- */
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    padding: 60px 0;
+}
+
+.service-item {
+    display: flex;
+    width: 100%;
+    align-items: center; /* Center horizontally (cite: image_3) */
+    margin-bottom: 60px; /* Space between each row (cite: image_3) */
+}
+
+.service-item-reverse {
+    flex-direction: row-reverse; /* Flip content layout for alternating rows (cite: image_3) */
+}
+
+/* Service Image Box */
+.service-image {
+    flex: 1; /* Stretch to occupy 50% width (cite: image_3) */
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.service-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Curved image corners (cite: image_3) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Subtle depth (cite: image_3) */
+}
+
+/* Service details text box */
+.service-details {
+    flex: 1; /* Stretch to occupy 50% width (cite: image_3) */
+    background-color: var(--bg-card-dark); /* Dark card background (cite: image_3) */
+    padding: 40px;
+    margin: 0 20px;
+    border-radius: 20px; /* Curved card corners (cite: image_3) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-title {
+    color: var(--text-orange); /* Title orange color (cite: image_3) */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+}
+
+/* Optional icon styling, assuming you use an icon library (cite: image_3) */
+.title-icon {
+    margin-right: 15px; /* Space between icon and text (cite: image_3) */
+    font-size: 1.5rem;
+    color: var(--text-orange);
+}
+
+.service-text {
+    font-size: 1rem;
+    color: var(--text-gray-light);
+    margin-bottom: 25px;
+}
+
+/* Service point lists */
+.service-points {
+    list-style-type: none; /* Remove default bullets (cite: image_3) */
+}
+
+.service-points li {
+    font-size: 0.95rem;
+    color: var(--text-gray-light);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Point bullet styling using pseudo-element (cite: image_3) */
+.service-points li::before {
+    content: "\2022"; /* Bullet character code (cite: image_3) */
+    color: var(--bullet-color); /* Bullet color matching design points list color (cite: image_3) */
+    display: inline-block;
+    width: 1rem;
+    font-weight: bold;
+    margin-right: 10px; /* Space between bullet and point text (cite: image_3) */
+}
+
+/* Numbered point colors as from image points listing (cite: image_3) */
+.service-points li:nth-child(1) { color: var(--text-orange); } /* Match color of point 1 in listing (cite: image_3) */
+.service-points li:nth-child(2) { color: var(--bullet-color); } /* Match color of point 2 in listing (cite: image_3) */
+.service-points li:nth-child(3) { color: var(--text-orange); } /* Match color of point 3 in listing (cite: image_3) */
+
+/* Specific bullet color matching to the point listing style (cite: image_3) */
+.service-points li:nth-child(1)::before { color: var(--text-orange); } /* point 1 bullet color exact match (cite: image_3) */
+.service-points li:nth-child(2)::before { color: var(--bullet-color); } /* point 2 bullet color exact match (cite: image_3) */
+.service-points li:nth-child(3)::before { color: var(--text-orange); } /* point 3 bullet color exact match (cite: image_3) */
+
+
+/* --- 3. Responsive Styling for mobile screens --- */
+@media (max-width: 768px) {
+    /* Header styling adjustment */
+    .header-content-box {
+        flex-direction: column; /* Stack vertically (cite: image_3) */
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .header-title {
+        border-right: none;
+        border-bottom: 1px solid #0011ff; /* Separator line vertically (cite: image_3) */
+        padding-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .header-description {
+        padding-top: 20px;
+    }
+
+    /* Grid row styling adjustment */
+    .service-item,
+    .service-item-reverse {
+        flex-direction: column; /* Stack all elements vertically (cite: image_3) */
+        padding: 20px; /* Horizontal space reduce (cite: image_3) */
+    }
+
+    /* Vertical stack order adjustment for reverse row */
+    .service-row-reverse .service-image {
+        margin-bottom: 0;
+        margin-top: 30px; /* Spacing on stack (cite: image_3) */
+    }
+    
+    .service-image {
+        margin-bottom: 30px; /* Vertical space on stack (cite: image_3) */
+    }
+
+    .service-details {
+        width: 100%; /* Full width for text box on mobile stack (cite: image_3) */
+        margin: 0;
+    }
+}
+.contact-section {
+    background-color: #ffffff; /* White strip */
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around; /* Elements ko evenly spread karne ke liye */
+    align-items: center;
+    border-top: 2px solid #007bff; /* Optional: Top par halka blue border */
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #007bff; /* Blue color matching your logo */
+}
+
+/* Responsive: Mobile ke liye upar-neeche stack ho jayega */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
