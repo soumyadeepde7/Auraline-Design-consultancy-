@@ -5,7 +5,12 @@
 }
 
 body {
-    overflow-x: hidden; /* Agar horizontal scroll aa raha hai toh ise use karein */
+    
+    background: #000;
+    color: #fff;
+    overflow-y: auto;   /* Ye scroll enable karega */
+    overflow-x: hidden;
+    width: 100%;
 }
 #bg-video {
     position: fixed;
@@ -1225,4 +1230,134 @@ body { background-color: #1a1a1a; font-family: sans-serif; }
             .footer-section { flex-direction: column; gap: 20px; align-items: center; }
         }
 
-        
+        /* Section Styling */
+.our-creation-section {
+    padding: 80px 5%;
+    background-color: #1a1a1a;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    color: #fff;
+    background: #333;
+    padding: 10px 20px;
+    display: inline-block;
+    border: 1px solid #00f2ff;
+}
+
+/* 3 Column Grid */
+.creation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards side-by-side */
+    gap: 30px;
+}
+
+/* Card Styling */
+.creation-card {
+    background: #252525;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+}
+
+.creation-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.view-btn {
+    width: 100%;
+    padding: 10px;
+    background: #00f2ff; /* Cyan color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Responsive: Mobile pe cards ek ke niche ek aayenge */
+@media (max-width: 900px) {
+    .creation-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Container & Theme */
+.completed-section {
+    background-color: #1a1a1a;
+    padding: 60px 5%;
+    color: #fff;
+}
+
+.section-heading { text-align: center; margin-bottom: 30px; font-size: 2rem; }
+
+/* Filter Buttons (Pill Shape) */
+.filter-controls { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
+.filter-btn {
+    padding: 8px 25px; border-radius: 50px; background: transparent; 
+    border: 1px solid #00f2ff; color: #fff; cursor: pointer; transition: 0.3s;
+}
+.filter-btn.active, .filter-btn:hover { background: #00f2ff; color: #000; }
+
+/* 3-Column Grid */
+.projects-grid {
+    display: grid;
+    /* Yeh property hamesha 3 columns hi rakhegi */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    padding: 20px 0;
+}
+
+
+/* Mobile ke liye responsive fix (taaki phone pe ek ke neeche ek aaye) */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet pe 2 columns */
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 2fr; /* Mobile pe 1 column */
+    }
+}
+
+/* Card Design & Hover Effect */
+.project-card {
+    background: #252525;
+    padding: 15px;
+    border-radius: 15px;
+    overflow: hidden; /* Important: zoom effect bahar na jaye */
+    transition: transform 0.4s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-10px); /* Mouse effect: Card upar uthega */
+    box-shadow: 0 10px 20px rgba(0, 242, 255, 0.2); /* Cyan glow */
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* PHOTO FIX: Yeh image ko stretch nahi karega, crop karega exactly reference image jaisa */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease; /* Smooth mouse effect for photo */
+}
+
+.project-card:hover img {
+    transform: scale(1.05); /* Photo thodi zoom hogi cursor le jane par */
+}
+
+.view-btn {
+    width: 100%; padding: 10px; background: #00f2ff;
+    border: none; border-radius: 5px; cursor: pointer; font-weight: bold;
+}
