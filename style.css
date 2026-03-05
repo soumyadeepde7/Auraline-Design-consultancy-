@@ -13,13 +13,17 @@ body {
     width: 100%;
 }
 #bg-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
+    position: absolute; /* Fixed ki jagah Absolute karein */
+    top: 50%;
+    left: 50%;
     min-width: 100%;
     min-height: 100%;
+    width: auto;
+    height: auto;
     z-index: -1;
+    transform: translate(-50%, -50%); /* Video center karne ke liye */
     filter: brightness(0.6);
+    object-fit: cover;
 }
 
 /* Nav Bar with Opposite Corners */
@@ -131,12 +135,12 @@ body {
     align-items: center;
     background: rgba(160, 160, 160, 0.7); /* Like Image gray-transparent color */
     backdrop-filter: blur(10px);
-    margin: 20px auto;
-    width: 95%;
-    padding: 0 50px;
+    margin: 10px auto;
+    width: 96%;
+    padding: 10px 20px;
     height: 100px;
     /* Opposite Corners Logic */
-    border-radius: 80px 0px 80px 0px; 
+    border-radius: 0px 80px 0px 80px; 
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .hero-layout, .hero-section {
@@ -336,7 +340,7 @@ body {
 /* Image Grid Styling */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(3, 1fr); /* 2 columns */
     gap: 20px;
     width: 50%; /* Right side area */
 }
@@ -390,7 +394,7 @@ body {
 /* Image Grid Styling */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -460,12 +464,13 @@ body {
 
 /* 2. Make the hero section responsive */
 .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Sirf screen ki height tak rahega */
+    overflow: hidden;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    min-height: 80vh; /* The screen will adjust according to the height. */
-    flex-wrap: wrap; /* Photos will shrink on smaller screens. */
+    justify-content: center;
 }
 
 /* 3. Adjust the text size slightly to make sure it takes up space. */
@@ -486,7 +491,7 @@ body {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(0, 1fr);
     gap: 15px;
 }
 
@@ -568,7 +573,7 @@ body {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .stats-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         display: grid;
     }
     
@@ -651,7 +656,7 @@ body {
 @media (max-width: 768px) {
     .stats-section {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
     .main-title { font-size: 1.8rem; }
@@ -737,12 +742,12 @@ body {
 .logo-area {
     display: flex;
     align-items: center; /* Logo aur text ko vertically center karega */
-    gap: 12px;           /* Logo aur text ke beech ka gap */
+    gap: 1px;           /* Logo aur text ke beech ka gap */
 }
 
 /* Logo ka size */
 .nav-logo {
-    height: 70px;       /* Aap isse chota-bada kar sakte hain */
+    height: 100px;       /* Aap isse chota-bada kar sakte hain */
     width: auto;
 }
 
@@ -1162,7 +1167,7 @@ body { background-color: #1a1a1a; font-family: sans-serif; }
         .section-header {
             text-align: center;
             font-size: 3rem;
-            color: #007bff; /* Blue header as seen in your image */
+            color: #ffffff; /* Blue header as seen in your image */
             margin-bottom: 50px;
         }
 
@@ -1230,134 +1235,246 @@ body { background-color: #1a1a1a; font-family: sans-serif; }
             .footer-section { flex-direction: column; gap: 20px; align-items: center; }
         }
 
-        /* Section Styling */
-.our-creation-section {
-    padding: 80px 5%;
-    background-color: #1a1a1a;
+
+
+        /* Yaha se Our Creation Suru hua hai */
+
+/* Container Background */
+.creation-container {
+    background-color: #2c2c30;
+    padding: 40px 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
 }
 
-.section-heading {
+/* OUR CREATION - Lamba Box */
+.main-header-box {
+    background-color: #404044; /* Dark grey box */
+    max-width: 90%; /* Box ko lamba karne ke liye width badhayi hai */
+    margin: 0 auto 20px auto;
+    padding: 15px;
+    border-radius: 10px;
     text-align: center;
-    margin-bottom: 50px;
 }
 
-.section-heading h2 {
-    color: #fff;
-    background: #333;
-    padding: 10px 20px;
-    display: inline-block;
-    border: 1px solid #00f2ff;
+.main-header-box h1 {
+    color: #ff9d6e; /* Orange/Peach color from image */
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 2px;
 }
 
-/* 3 Column Grid */
+.sub-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sub-header p {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.underline {
+    width: 150px;
+    height: 3px;
+    background-color: #40e0d0; /* Cyan color */
+    margin: 0 auto;
+}
+
+/* Grid System - Responsive side-by-side */
 .creation-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards side-by-side */
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Card Styling */
-.creation-card {
-    background: #252525;
+/* Card & Mouse Hover Effect */
+.project-card {
+    background: #1e1e1e;
+    border-radius: 20px;
     padding: 15px;
-    border-radius: 15px;
-    color: white;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.creation-card img {
+.project-card:hover {
+    transform: translateY(-10px); /* Mouse effect: Card upar uthega */
+}
+
+.img-wrapper img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
 }
+
+/* Button & Typography */
+.card-content h3 { font-size: 16px; margin: 15px 0 5px 0; }
+.category { color: #ff9d6e; font-size: 12px; margin-bottom: 15px; }
 
 .view-btn {
     width: 100%;
-    padding: 10px;
-    background: #00f2ff; /* Cyan color */
+    background-color: #40e0d0;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 12px;
+    border-radius: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 
-/* Responsive: Mobile pe cards ek ke niche ek aayenge */
-@media (max-width: 900px) {
-    .creation-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* Container & Theme */
-.completed-section {
-    background-color: #1a1a1a;
-    padding: 60px 5%;
-    color: #fff;
-}
-
-.section-heading { text-align: center; margin-bottom: 30px; font-size: 2rem; }
-
-/* Filter Buttons (Pill Shape) */
-.filter-controls { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
-.filter-btn {
-    padding: 8px 25px; border-radius: 50px; background: transparent; 
-    border: 1px solid #00f2ff; color: #fff; cursor: pointer; transition: 0.3s;
-}
-.filter-btn.active, .filter-btn:hover { background: #00f2ff; color: #000; }
-
-/* 3-Column Grid */
-.projects-grid {
-    display: grid;
-    /* Yeh property hamesha 3 columns hi rakhegi */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
-    padding: 20px 0;
-}
-
-
-/* Mobile ke liye responsive fix (taaki phone pe ek ke neeche ek aaye) */
+/* RESPONSIVE DESIGN (Mobile Fix) */
 @media (max-width: 992px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr); /* Tablet pe 2 columns */
+    .creation-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tablet: 2 columns */
     }
 }
 
 @media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 2fr; /* Mobile pe 1 column */
+    .creation-grid {
+        grid-template-columns: 1fr; /* Mobile: 1 column */
+    }
+    .main-header-box {
+        width: 95%; /* Mobile pe box screen ke hisaab se adjust hoga */
     }
 }
 
-/* Card Design & Hover Effect */
-.project-card {
-    background: #252525;
-    padding: 15px;
-    border-radius: 15px;
-    overflow: hidden; /* Important: zoom effect bahar na jaye */
-    transition: transform 0.4s ease;
+
+
+/* Yaha se Our Project ka Css Suru ho rahi hai */
+
+
+
+/* Container Styling */
+.completed-section {
+    background-color: #2c2c30;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
 }
 
+/* Underline Fix */
+.section-header { margin-bottom: 30px; }
+.section-header h2 { font-size: 28px; margin-bottom: 8px; }
+.teal-underline {
+    width: 140px;
+    height: 3px;
+    background-color: #00f2ff;
+    margin: 0 auto;
+}
+
+/* 3 COLUMN GRID - SIDE BY SIDE */
+.projects-grid {
+    display: grid;
+    /* 3 Columns by default (Desktop) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Card Mouse Effect (Smooth Transition) */
+.project-card {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 20px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: left;
+    cursor: pointer;
+}
 
 .project-card:hover {
-    transform: translateY(-10px); /* Mouse effect: Card upar uthega */
-    box-shadow: 0 10px 20px rgba(0, 242, 255, 0.2); /* Cyan glow */
+    transform: translateY(-12px); /* Mouse hover par card upar uthega */
+    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.15);
 }
 
-.project-card img {
+.image-box img {
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* PHOTO FIX: Yeh image ko stretch nahi karega, crop karega exactly reference image jaisa */
-    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
     margin-bottom: 15px;
-    transition: transform 0.4s ease; /* Smooth mouse effect for photo */
 }
 
-.project-card:hover img {
-    transform: scale(1.05); /* Photo thodi zoom hogi cursor le jane par */
+.card-info h3 { font-size: 17px; margin-bottom: 5px; }
+.card-info p { color: #ff9d6e; font-size: 13px; margin-bottom: 15px; }
+
+.view-details {
+    width: 100%;
+    background-color: #00f2ff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.view-btn {
-    width: 100%; padding: 10px; background: #00f2ff;
-    border: none; border-radius: 5px; cursor: pointer; font-weight: bold;
+.view-details:hover { background-color: #00d8e4; }
+
+/* --- FULLY RESPONSIVE FIX --- */
+
+@media (max-width: 1024px) {
+    /* Tablet Par: 2 Columns ho jayenge */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    /* Mobile Par: 1 Column (Ek ke niche ek image) */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    
+    .section-header h2 { font-size: 22px; }
+    .teal-underline { width: 100px; }
+}
+
+
+
+
+/* Service cards mein icons and bullets add karne ke lye */
+
+
+/* Service List Styling */
+.service-list {
+    list-style: none; /* Default dots hatane ke liye */
+    padding: 0;
+    margin: 15px 0;
+    text-align: left; /* Text ko left align rakhega */
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Icon aur text ke beech gap */
+    color: #ccc;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.service-list li i {
+    color: #00f2ff; /* Teal color icons */
+    font-size: 12px;
+}
+
+/* Card layout fix taaki button niche rahe */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-content, .card-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.view-btn, .view-details {
+    margin-top: auto; /* Button ko hamesha bottom mein rakhega */
 }
